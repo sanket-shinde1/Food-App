@@ -1,13 +1,87 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    color: black;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+  
+.logo{
+    margin: 3px;
+    height: 10px;
+    width: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-item{
+    padding: 0px 20px;
+}
+
+.nav-item > ul{
+    display: flex;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.nav-item > ul > li {
+    padding: 10px;
+    margin : 10px;
+}
+
+.res-card{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 3px;
+    /* height: 400px; */
+    padding: 3px;
+    align-items: center;
+    background-color:#f0f0f0;
+}
+
+.areaName{
+    color: rgb(247, 64, 158);
+    /* margin: 13px; */
+    margin-bottom: 8px;
+}
+
+.cuisines{
+    margin: 5px;
+}
+
+.rating{
+    /* padding: 0px; */
+    margin: 10px;
+}
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4px;
+}
+
+.res-card:hover{
+    border: 1px solid black;
+    cursor:pointer;
+    border-radius: 10px;
+}
+
+.search{
+    padding: 20px;
+}
+
+.search-button{
+    border-radius: 10px;
+    width: 450px;
+    height: 30px;
+}
+
+.res-logo{
+    width: 90%;
+    height: 40%;
+}
+
+.search{
+    display: flex;;
+    justify-content: center;
 }
