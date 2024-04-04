@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { RestaurantInfoInterface } from "../interfaces/RestaurantsInterface";
 import { RESTAURANTS_API } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
@@ -33,6 +34,10 @@ const Body = () => {
     );
   };
 
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return <h1>You are offline! Please check your internt connection</h1>;
+
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
@@ -62,6 +67,7 @@ const Body = () => {
           </button>
         </div>
       </div>
+
       <button
         className="filter-btn"
         onClick={() => {
