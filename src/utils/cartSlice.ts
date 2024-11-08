@@ -4,9 +4,9 @@ interface CartState {
   items: any[]; // Adjust the type according to the structure of your items
 }
 
-const initialState: CartState = {
-  items: [],
-};
+// const initialState: CartState = {
+//   items: [],
+// };
 
 const cartSlice = createSlice({
   name: "cart",

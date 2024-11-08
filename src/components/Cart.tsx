@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import MenuCard from "./MenuCard";
+// import MenuCard from "./MenuCard";
 
 //Issue to render the data with the help of MenuCard Component need to reslove
 
