@@ -10,6 +10,7 @@ import Body from "./components/Body";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
+import Cart from "./components/Cart";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -37,6 +38,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/restaurants/:resId",

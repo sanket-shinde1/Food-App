@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import { RestaurantInfoInterface } from "../interfaces/RestaurantsInterface";
 import { RESTAURANTS_API } from "../utils/constants";
@@ -19,6 +19,11 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  //This is an example of higher order function
+  //passing component to function and returing another component.
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+  console.log(listOfRestaurant);
   useEffect(() => {
     fetchData();
   }, []);
@@ -112,7 +117,12 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
+            {/* <RestaurantCard resData={restaurant} /> */}
           </Link>
         ))}
       </div>

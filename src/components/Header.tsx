@@ -1,11 +1,16 @@
 import LOGO from "../utils/logo-removebg-preview.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   // const [status, setStatus] = useState("Login");
 
   const onlineStatus = useOnlineStatus();
+
+  //Subscribing to the store using a selector
+  const cartItems = useSelector((store: any) => store.cart.items);
+  // console.log(cartItems);
 
   return (
     <div className="header">
@@ -47,9 +52,16 @@ const Header = () => {
               </Link>
             </p>
           </li>
-          {/* <li>
-            <p>Cart</p>
-          </li> */}
+          <li>
+            <p>
+              <Link
+                to="/cart"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Cart - {cartItems.length}
+              </Link>
+            </p>
+          </li>
           {/* <button
             className="login-btn"
             onClick={() => {

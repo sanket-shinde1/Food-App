@@ -1,9 +1,17 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 const MenuCard = (props: any) => {
   const menu = props;
   const dishImg =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/";
 
   const { name, imageId, description, defaultPrice, price } = menu?.menu;
+
+  const dispatch = useDispatch();
+  const handleAddItem = (menu: any) => {
+    dispatch(addItem(menu));
+  };
 
   return (
     <div className="menu-container">
@@ -15,6 +23,12 @@ const MenuCard = (props: any) => {
       <div className="dish-img">
         <img src={dishImg + imageId} alt="logo" height={100} />
       </div>
+      <button
+        style={{ height: 20, marginTop: 50 }}
+        onClick={() => handleAddItem(menu)}
+      >
+        Add+
+      </button>
     </div>
   );
 };
